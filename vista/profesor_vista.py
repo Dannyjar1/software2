@@ -69,12 +69,20 @@ class ProfesorVista:
             self.limpiar_campos()  # Assuming you want to clear the fields after adding
             self.actualizar_tabla()
 
+    # def eliminar_profesor(self):
+    #     seleccionado = self.tabla.focus()
+    #     if seleccionado:
+    #         datos = self.tabla.item(seleccionado)
+    #         self.controlador.eliminar_profesor(datos['values'][0])
+    #         self.actualizar_tabla()
+
     def eliminar_profesor(self):
-        seleccionado = self.tabla.focus()
+        seleccionado = self.tabla.focus()  # Obtiene el ítem seleccionado
         if seleccionado:
-            datos = self.tabla.item(seleccionado)
-            self.controlador.eliminar_profesor(datos['values'][0])
-            self.actualizar_tabla()
+           datos = self.tabla.item(seleccionado, 'values')
+           codigo_profesor = datos[0]  # El código está en la primera columna
+           self.controlador.eliminar_profesor(codigo_profesor)  # Llama al controlador para eliminar
+           self.actualizar_tabla()  # Actualiza la tabla para reflejar los cambios
 
 
     def obtener_datos_profesor(self):
