@@ -105,13 +105,33 @@ class ProfesorVista:
         self.especialidad.delete(0, tk.END)
         self.ingreso.delete(0, tk.END)
 
+    
 
     def actualizar_tabla(self):
         for i in self.tabla.get_children():
             self.tabla.delete(i)
         profesores = self.controlador.obtener_profesores()
         for profesor in profesores:
-            self.tabla.insert('', 'end', values=(profesor['codigo'], profesor['nombre']))
+            try:
+                self.tabla.insert('', 'end', values=(
+                    profesor['codigo'], 
+                    profesor['nombre'],
+                    profesor.get('carrera', 'No especificado'),  # Usa get para evitar KeyError
+                    profesor.get('especialidad', 'No especificado'),
+                    profesor.get('ingreso', 'No especificado')))
+            except KeyError as e:
+                print(f"Falta la clave en el diccionario: {e}")
+            # Manejar la excepción como sea apropiado
+
+    
+
+
+    # def actualizar_tabla(self):
+    #     for i in self.tabla.get_children():
+    #         self.tabla.delete(i)
+    #     profesores = self.controlador.obtener_profesores()
+    #     for profesor in profesores:
+    #         self.tabla.insert('', 'end', values=(profesor['codigo'], profesor['nombre']))
 
     def mainloop(self):
         self.actualizar_tabla()
