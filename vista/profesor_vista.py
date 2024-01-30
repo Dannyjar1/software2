@@ -1,19 +1,3 @@
-# class ProfesorVista:
-#     def mostrar_profesores(self, profesores):
-#         for profesor in profesores:
-#             print(f"Código: {profesor['codigo']}, Nombre: {profesor['nombre']}, Carrera: {profesor['carrera']}, Especialidad: {profesor['especialidad']}, Ingreso: {profesor['ingreso']}")
-
-#     def obtener_datos_profesor(self):
-#         codigo = input("Ingrese el código: ")
-#         nombre = input("Ingrese el nombre: ")
-#         carrera = input("Ingrese la carrera: ")
-#         especialidad = input("Ingrese la especialidad: ")
-#         ingreso = input("Ingrese la fecha de ingreso: ")
-#         return (codigo, nombre, carrera, especialidad, ingreso)
-
-#     def mostrar_mensaje(self, mensaje):
-#         print(mensaje)
-
 
 
 
@@ -52,17 +36,7 @@ class ProfesorVista:
         self.ingreso = tk.Entry(self.frame)
         self.ingreso.grid(row=4, column=1)
 
-        # tk.Button(self.frame, text="Agregar", command=self.agregar_profesor).grid(row=2, column=0, columnspan=2, pady=5)
-        # tk.Button(self.frame, text="Eliminar", command=self.eliminar_profesor).grid(row=3, column=0, columnspan=2, pady=5)
-        # tk.Button(self.frame, text="Actualizar", command=self.actualizar_profesor).grid(row=5, column=0, columnspan=2, pady=5)
-
-        # self.tabla = ttk.Treeview(self.frame, columns=("codigo", "nombre", "carrera", "especialidad", "ingreso"), show='headings')
-        # self.tabla.heading("codigo", text="Código")
-        # self.tabla.heading("nombre", text="Nombre")
-        # self.tabla.heading("carrera", text="Carrera")
-        # self.tabla.heading("especialidad", text="Especialidad")
-        # self.tabla.heading("ingreso", text="Ingreso")
-
+      
         self.btn_agregar = tk.Button(self.frame, text="Agregar", command=self.agregar_profesor)
         self.btn_agregar.grid(row=5, column=0, columnspan=2, pady=(10, 0))
 
@@ -143,25 +117,4 @@ class ProfesorVista:
         self.actualizar_tabla()
         self.ventana.mainloop()
 
-    # def setup_ui(self):
-    # # ... Configuración de los widgets de entrada ...
-
-    # # Configuración de los botones
-    #  self.btn_agregar = tk.Button(self.frame, text="Agregar", command=self.agregar_profesor)
-    #  self.btn_agregar.grid(row=5, column=0, columnspan=2, pady=(10, 0))
-
-    #  self.btn_eliminar = tk.Button(self.frame, text="Eliminar", command=self.eliminar_profesor)
-    #  self.btn_eliminar.grid(row=6, column=0, columnspan=2, pady=(5, 0))
-
-    #  self.btn_actualizar = tk.Button(self.frame, text="Actualizar", command=self.actualizar_profesor)
-    #  self.btn_actualizar.grid(row=7, column=0, columnspan=2, pady=(5, 0))
-
-    # # Configuración de la tabla
-    #  self.tabla = ttk.Treeview(self.frame, columns=("codigo", "nombre", "carrera", "especialidad", "ingreso"), show='headings')
-    #  self.tabla.heading("codigo", text="Código")
-    #  self.tabla.heading("nombre", text="Nombre")
-    #  self.tabla.heading("carrera", text="Carrera")
-    #  self.tabla.heading("especialidad", text="Especialidad")
-    #  self.tabla.heading("ingreso", text="Ingreso")
-    #  self.tabla.grid(row=8, column=0, columnspan=2, pady=(10, 0))
-
+    
